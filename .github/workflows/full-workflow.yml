@@ -3,12 +3,15 @@ name: Complete Workflow
 on: ['push']
 
 jobs:
+
   build:
+
     runs-on: ubuntu-latest
 
     strategy:
       matrix: node-version:[12.x]
         mongodb-version:[4.2]
+    
     steps:
       - uses: actions/checkout@v2
       - run: git fetch --prune --unshallow
